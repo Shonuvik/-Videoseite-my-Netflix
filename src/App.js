@@ -12,9 +12,19 @@ function App() {
 
       <BannerMain videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
       url={dadosIniciais.categorias[0].videos[0].url}
-      videoDescription={"God of War - Trailer"} />
+      videoDescription={"Jogos  -  God of War - Trailer"} />
+     
+     <BannerMain videoTitle={dadosIniciais.categorias[2].videos[2].titulo}
+      url={dadosIniciais.categorias[2].videos[2].url}
+      videoDescription={"GraphQL  - Tecnologia"} />
+
+      <BannerMain videoTitle={dadosIniciais.categorias[1].videos[1].titulo}
+      url={dadosIniciais.categorias[1].videos[1].url}
+      videoDescription={"React Redux - Tecnologia"} />
+      
 
       <Carousel  
+
        ignoreFirstVideo
        category={dadosIniciais.categorias[0]}
         />
@@ -35,6 +45,9 @@ function App() {
         />
         <Carousel  
        category={dadosIniciais.categorias[5]}
+        />
+        <Carousel  
+       category={dadosIniciais.categorias[6]}
         />
         
         <Footer />

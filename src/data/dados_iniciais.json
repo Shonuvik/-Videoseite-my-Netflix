@@ -10,8 +10,18 @@
         },
         "videos": [
           {
-            "titulo": "God of War 4",
+            "titulo": "Jogos",
             "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+          },
+
+          {
+            "titulo":"Tecnologia",
+            "url":"https://www.youtube.com/watch?v=7RoHxSGVAdU&list=PL3_3koQ96v-4VUeXa1OTKTllllyWJvMxK&index=25&t=28s"
+          },
+          
+          {
+            "titulo": "Tecnologia",
+            "url": "https://www.youtube.com/watch?v=r_hYR53r61M&list=PL3_3koQ96v-7RZ5U3l6ldU_YUlRumXiQl&index=170&t=0s"
           },
           {
             "titulo": "SEO com React",
@@ -45,7 +55,7 @@
       },
       {
         "titulo": "React Redux",
-        "cor": "#00C86F",
+        "cor": "#bc1abc",
         "link_extra": {
           "text": "",
           "url": ""
@@ -73,9 +83,44 @@
           }
         ]
       },
+    {
+      "titulo": "GraphQL",
+      "cor": "#dda0dd",
+      "link_extra": {
+        "text": "",
+        "url": ""
+      },
+      "videos": [
+        {
+          "titulo": "GraphQL Conceitos #1",
+          "url": "https://www.youtube.com/watch?v=7RoHxSGVAdU&list=PL3_3koQ96v-4VUeXa1OTKTllllyWJvMxK&index=25&t=28s"
+        },
+        {
+          "titulo": "GraphQL- Types, Queries e Mutations #4",
+          "url": "https://www.youtube.com/watch?v=iUYabIGhJYk&list=PL3_3koQ96v-4VUeXa1OTKTllllyWJvMxK&index=26&t=0s"
+        },
+        {
+          "titulo": "GraphQL- configurando apollo Server #2",
+          "url": "https://www.youtube.com/watch?v=69e1MoUWE1g&list=PL3_3koQ96v-4WH6fB6xw721GEJcK0-oq7&index=6&t=155s"
+        },
+        {
+          "titulo": "GraphQL- Criando schemas e resolvers #4",
+          "url": "https://www.youtube.com/watch?v=fktvJawkGdQ&list=PL3_3koQ96v-4VUeXa1OTKTllllyWJvMxK&index=28&t=0s"
+        }, 
+        {
+          "titulo": "GraphQL- Real-Time (WebSockets) com GraphQL Subscriptions  #5",
+          "url": "https://www.youtube.com/watch?v=dPcpXjgrLOI&list=PL3_3koQ96v-4VUeXa1OTKTllllyWJvMxK&index=29&t=0s"
+        },
+        {
+          "titulo": "Usando Git Direito",
+          "url": "https://www.youtube.com/watch?v=66WYA4-Ly18&list=PL3_3koQ96v-4WH6fB6xw721GEJcK0-oq7&index=33&t=0sk"
+        }
+      ]
+    },
+      
       {
         "titulo": "React Native",
-        "cor": "#9cd33b",
+        "cor": "#5acdf4",
         "link_extra": {
           "text": "",
           "url": ""
