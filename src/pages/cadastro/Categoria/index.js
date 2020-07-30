@@ -30,7 +30,7 @@ function CadastroCategoria() {
   }
 
     useEffect(() => {
-      const URL = "http://localhost:8081/categorias"
+      const URL = "http://localhost:8080/categorias"
       fetch(URL).then( async(serverResponse)=>{
         if(serverResponse.ok) {
           const response = await serverResponse.json();
@@ -106,11 +106,12 @@ function CadastroCategoria() {
         </Button>
       </form>
 
-        {categorias.length === 0 && (
+      {categorias.length === 0 && (
           <div>
           Loading...
         </div>
 )}
+
       <ul>
         {categorias.map((categoria) => {
           return (
