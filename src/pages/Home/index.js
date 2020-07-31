@@ -1,58 +1,87 @@
-import React from 'react';
-import Menu from '../../components/Menu';
-import dadosIniciais from '../../data/dados_iniciais.json'
+import React, { useEffect, useState } from 'react';
+// import dadosIniciais from '../../data/dados_iniciais.json';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
+import PageDefault from '../../components/PageDefault';
+import categoriasRepository from '../../repositories/categorias';
 
 function Home() {
+  const [dadosIniciais, setDadosIniciais] = useState([]);
+
+  useEffect(() => {
+    // http://localhost:8080/categorias?_embed=videos
+    categoriasRepository.getAllWithVideos()
+      .then((categoriasComVideos) => {
+        console.log(categoriasComVideos[0].videos[0]);
+        setDadosIniciais(categoriasComVideos);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
   return (
-    <div style={{background: "#141414"}}>
-      <Menu />
+    <PageDefault paddingAll={0}>
+      {dadosIniciais.length === 0 && (<div>Loading...</div>)}
 
-      <BannerMain videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-      url={dadosIniciais.categorias[0].videos[0].url}
-      videoDescription={"Jogos  -  God of War - Trailer"} />
-     
-     <BannerMain videoTitle={dadosIniciais.categorias[2].videos[2].titulo}
-      url={dadosIniciais.categorias[2].videos[2].url}
-      videoDescription={"GraphQL  - Tecnologia"} />
+      {dadosIniciais.map((categoria, indice) => {
+        if (indice === 0) {
+          return (
+            <div key={categoria.id}>
+              <BannerMain
+                videoTitle={dadosIniciais[0].videos[0].titulo}
+                url={dadosIniciais[0].videos[0].url}
+                videoDescription={dadosIniciais[0].videos[0].description}
+              />
+               <BannerMain
+                videoTitle={dadosIniciais[1].videos[1].titulo}
+                url={dadosIniciais[1].videos[1].url}
+                videoDescription={dadosIniciais[1].videos[1].description}
+              />
+              <BannerMain
+                videoTitle={dadosIniciais[3].videos[3].titulo}
+                url={dadosIniciais[3].videos[3].url}
+                videoDescription={dadosIniciais[3].videos[3].description}
+              />
+              <Carousel
+                ignoreFirstVideo
+                category={dadosIniciais[0]}
+              />
+              
+            </div>
+          );
+        }
 
-      <BannerMain videoTitle={dadosIniciais.categorias[1].videos[1].titulo}
-      url={dadosIniciais.categorias[1].videos[1].url}
-      videoDescription={"React Redux - Tecnologia"} />
-      
+        return (
+          <Carousel
+            key={categoria.id}
+            category={categoria}
+          />
+        );
+      })}
 
-      <Carousel  
-
-       ignoreFirstVideo
-       category={dadosIniciais.categorias[0]}
-        />
-
-      <Carousel  
-       category={dadosIniciais.categorias[1]}
-        />
-
-      <Carousel  
-       category={dadosIniciais.categorias[2]}
-        />
-
-      <Carousel  
-       category={dadosIniciais.categorias[3]}
-        />
-        <Carousel  
-       category={dadosIniciais.categorias[4]}
-        />
-        <Carousel  
-       category={dadosIniciais.categorias[5]}
-        />
-        <Carousel  
-       category={dadosIniciais.categorias[6]}
-        />
-        
-        <Footer />
-    </div>
-
+      {/* <BannerMain
+        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
+        url={dadosIniciais.categorias[0].videos[0].url}
+        videoDescription="O que"
+      />
+      <Carousel
+        ignoreFirstVideo
+        category={dadosIniciais.categorias[0]}
+      />
+      <Carousel
+        category={dadosIniciais.categorias[1]}
+      />
+      <Carousel
+        category={dadosIniciais.categorias[2]}
+      />
+      <Carousel
+        category={dadosIniciais.categorias[3]}
+      />
+      <Carousel
+        category={dadosIniciais.categorias[4]}
+      /> */}
+    </PageDefault>
   );
 }
 
